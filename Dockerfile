@@ -23,6 +23,6 @@ RUN mkdir -p data/input_data/dam_resources data/output_data
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONDONTWRITEBYTECODE=1
 
-# Default command - show help
+# Run the full pipeline by default
 ENTRYPOINT ["python", "scripts/run_etl_pipeline.py"]
-CMD ["--help"]
+CMD []
