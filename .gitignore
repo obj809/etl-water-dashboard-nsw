@@ -4,3 +4,4 @@ oauth_token.json
 tests/__pycache__
 .pytest_cache
 CLAUDE.md
+VPS_CRON_SETUP.md

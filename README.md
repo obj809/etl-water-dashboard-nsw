@@ -78,6 +78,64 @@ pytest tests/test_load.py     # Load tests (requires DB)
 └── sql/                  # Database schema
 ```
 
+## Docker
+
+### Local Development (with MySQL)
+
+```bash
+# Setup
+cp .env.docker .env  # Edit with your API credentials
+
+# Build and start
+./docker-run.sh build
+./docker-run.sh up        # Starts MySQL container
+
+# Run pipeline
+./docker-run.sh pipeline  # Full pipeline with tests
+./docker-run.sh pipeline-no-tests
+
+# Run individual stages
+./docker-run.sh extract
+./docker-run.sh transform
+./docker-run.sh load
+
+# Other commands
+./docker-run.sh test      # Run tests only
+./docker-run.sh shell     # Open shell in container
+./docker-run.sh db        # Connect to MySQL
+./docker-run.sh down      # Stop containers
+```
+
+### Production (Hostinger VPS)
+
+1. Copy files to VPS:
+```bash
+scp -r . user@your-vps:/path/to/app
+```
+
+2. Configure `.env` with your production database credentials
+
+3. Run pipeline:
+```bash
+./docker-run.sh prod
+# Or directly:
+docker-compose -f docker-compose.prod.yml run --rm etl
+```
+
+### Manual Docker Commands
+
+```bash
+# Build
+docker build -t water-etl .
+
+# Run with external database
+docker run --rm --env-file .env water-etl
+
+# Run specific stage
+docker run --rm --env-file .env water-etl --stage extract
+docker run --rm --env-file .env water-etl --no-tests
+```
+
 ## Known Issues
 
 These dams are excluded due to API errors:

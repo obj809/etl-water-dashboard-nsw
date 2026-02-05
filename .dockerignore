@@ -1,0 +1,50 @@
+# .dockerignore
+
+# Virtual environment
+venv/
+.venv/
+
+# Git
+.git/
+.gitignore
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Environment files (will be mounted or passed separately)
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Data files (will be mounted as volume)
+data/input_data/*
+data/output_data/*
+!data/input_data/.gitkeep
+!data/output_data/.gitkeep
+
+# OAuth token
+oauth_token.json
+
+# Documentation
+*.md
+!README.md
+
+# Local scripts
+commands.md
+CLAUDE.md
+VPS_CRON_SETUP.md

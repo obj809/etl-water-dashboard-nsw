@@ -1,0 +1,12 @@
+# docker-compose.prod.yml
+# Production deployment - connects to external database
+
+services:
+  etl:
+    build: .
+    container_name: water-etl
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    restart: "no"

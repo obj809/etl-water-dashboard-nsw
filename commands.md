@@ -97,3 +97,25 @@ pytest tests/test_transform.py -v
 ## run load tests only
 
 pytest tests/test_load.py -v
+
+
+
+# DOCKER
+
+Note: Requires local MySQL running on host machine
+
+## build image
+
+./docker-run.sh build
+
+## run full pipeline
+
+./docker-run.sh pipeline
+
+## stop containers
+
+./docker-run.sh down
+
+## run with external DB (production)
+
+./docker-run.sh prod

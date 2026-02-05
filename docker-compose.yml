@@ -1,0 +1,16 @@
+# docker-compose.yml
+# Local development - connects to local MySQL on host machine
+
+services:
+  etl:
+    build: .
+    container_name: water-etl
+    env_file:
+      - .env
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_PORT=3306
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./data:/app/data
