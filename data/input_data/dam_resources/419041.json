@@ -1,0 +1,40 @@
+{
+  "dam_id": "419041",
+  "dam_name": "Keepit Dam",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "419041",
+        "dam_name": "Keepit Dam",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 298208,
+            "percentage_full": 71.18,
+            "storage_inflow": -135.7,
+            "storage_release": 8120
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/419041",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/419041/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/419041/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "dam_id": "416030",
+  "dam_name": "Pindari Dam",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "416030",
+        "dam_name": "Pindari Dam",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 146890,
+            "percentage_full": 47.16,
+            "storage_inflow": 285.5,
+            "storage_release": 4470
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/416030",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/416030/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/416030/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}

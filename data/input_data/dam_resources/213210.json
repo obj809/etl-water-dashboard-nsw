@@ -1,0 +1,40 @@
+{
+  "dam_id": "213210",
+  "dam_name": "Woronora Dam",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "213210",
+        "dam_name": "Woronora Dam",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 66678,
+            "percentage_full": 95.89,
+            "storage_inflow": 0,
+            "storage_release": 0
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/213210",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/213210/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/213210/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}

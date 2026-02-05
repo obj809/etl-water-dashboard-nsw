@@ -1,0 +1,40 @@
+{
+  "dam_id": "210102",
+  "dam_name": "Lostock Dam",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "210102",
+        "dam_name": "Lostock Dam",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 18075,
+            "percentage_full": 91.58,
+            "storage_inflow": 319,
+            "storage_release": 170
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/210102",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/210102/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/210102/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}

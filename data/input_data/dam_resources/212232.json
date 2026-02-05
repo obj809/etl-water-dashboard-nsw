@@ -1,0 +1,40 @@
+{
+  "dam_id": "212232",
+  "dam_name": "Cataract Dam",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "212232",
+        "dam_name": "Cataract Dam",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 95074,
+            "percentage_full": 97.82,
+            "storage_inflow": 0,
+            "storage_release": 0
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/212232",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/212232/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/212232/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "dam_id": "210097",
+  "dam_name": "Glenbawn Dam",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "210097",
+        "dam_name": "Glenbawn Dam",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 734633,
+            "percentage_full": 98.1,
+            "storage_inflow": -299,
+            "storage_release": 981
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/210097",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/210097/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/210097/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}

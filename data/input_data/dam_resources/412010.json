@@ -1,0 +1,40 @@
+{
+  "dam_id": "412010",
+  "dam_name": "Lake Wyangala",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "412010",
+        "dam_name": "Lake Wyangala",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 876072,
+            "percentage_full": 71.98,
+            "storage_inflow": -8028,
+            "storage_release": 16540
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/412010",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/412010/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/412010/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}

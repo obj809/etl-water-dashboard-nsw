@@ -1,0 +1,40 @@
+{
+  "dam_id": "203042",
+  "dam_name": "Toonumbar Dam",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "203042",
+        "dam_name": "Toonumbar Dam",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 10979,
+            "percentage_full": 101.53,
+            "storage_inflow": 92,
+            "storage_release": 66
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/203042",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/203042/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/203042/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}

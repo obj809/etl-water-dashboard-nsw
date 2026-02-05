@@ -1,0 +1,40 @@
+{
+  "dam_id": "410102",
+  "dam_name": "Blowering Dam",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "410102",
+        "dam_name": "Blowering Dam",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 331145,
+            "percentage_full": 20.64,
+            "storage_inflow": 6062.1002,
+            "storage_release": 19305
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/410102",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/410102/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/410102/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}

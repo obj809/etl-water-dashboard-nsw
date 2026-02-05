@@ -1,0 +1,40 @@
+{
+  "dam_id": "418035",
+  "dam_name": "Copeton Dam",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "418035",
+        "dam_name": "Copeton Dam",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 891737,
+            "percentage_full": 66.28,
+            "storage_inflow": -27.7,
+            "storage_release": 21012
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/418035",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/418035/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/418035/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}

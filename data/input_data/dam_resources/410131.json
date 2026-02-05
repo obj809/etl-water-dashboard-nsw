@@ -1,0 +1,40 @@
+{
+  "dam_id": "410131",
+  "dam_name": "Burrinjuck Dam",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "410131",
+        "dam_name": "Burrinjuck Dam",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 398721,
+            "percentage_full": 38.91,
+            "storage_inflow": 2703.8,
+            "storage_release": 10671
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/410131",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/410131/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/410131/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}

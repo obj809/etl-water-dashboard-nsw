@@ -1,2 +1,4 @@
 .env
+venv
+oauth_token.json
 CLAUDE.md

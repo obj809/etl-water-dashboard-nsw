@@ -1,0 +1,40 @@
+{
+  "dam_id": "419080",
+  "dam_name": "Split Rock Dam",
+  "start_date": "2026-02-01",
+  "end_date": "2026-02-28",
+  "resources": {
+    "dams": [
+      {
+        "dam_id": "419080",
+        "dam_name": "Split Rock Dam",
+        "resources": [
+          {
+            "date": "2026-02-01",
+            "storage_volume": 383645,
+            "percentage_full": 97.41,
+            "storage_inflow": -475.9,
+            "storage_release": 330
+          }
+        ],
+        "_links": [
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/419080",
+            "rel": "up",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/419080/resources",
+            "rel": "self",
+            "method": "GET"
+          },
+          {
+            "href": "https://api.onegov.nsw.gov.au/waternsw-waterinsights/v1/dams/419080/resources/latest",
+            "rel": "related",
+            "method": "GET"
+          }
+        ]
+      }
+    ]
+  }
+}
