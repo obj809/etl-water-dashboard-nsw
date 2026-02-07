@@ -5,8 +5,8 @@
     "resources": [
       {
         "date": "2026-02-01",
-        "storage_volume": 10923,
-        "percentage_full": 101.01,
+        "storage_volume": 10922,
+        "percentage_full": 101,
         "storage_inflow": 130,
         "storage_release": 117
       }
@@ -95,8 +95,8 @@
     "resources": [
       {
         "date": "2026-02-01",
-        "storage_volume": 269831,
-        "percentage_full": 95.58,
+        "storage_volume": 269906,
+        "percentage_full": 95.61,
         "storage_inflow": -172,
         "storage_release": 188
       }
@@ -425,8 +425,8 @@
     "resources": [
       {
         "date": "2026-02-01",
-        "storage_volume": 8811,
-        "percentage_full": 100.28,
+        "storage_volume": 8808,
+        "percentage_full": 100.25,
         "storage_inflow": 0,
         "storage_release": 0
       }
@@ -455,8 +455,8 @@
     "resources": [
       {
         "date": "2026-02-01",
-        "storage_volume": 2268,
-        "percentage_full": 84,
+        "storage_volume": 2264,
+        "percentage_full": 83.85,
         "storage_inflow": 0,
         "storage_release": 0
       }
@@ -665,8 +665,8 @@
     "resources": [
       {
         "date": "2026-02-01",
-        "storage_volume": 145144,
-        "percentage_full": 46.6,
+        "storage_volume": 143602,
+        "percentage_full": 46.1,
         "storage_inflow": 1414.8,
         "storage_release": 10960
       }
@@ -695,8 +695,8 @@
     "resources": [
       {
         "date": "2026-02-01",
-        "storage_volume": 887485,
-        "percentage_full": 65.96,
+        "storage_volume": 883149,
+        "percentage_full": 65.64,
         "storage_inflow": -52.5,
         "storage_release": 25230
       }
@@ -725,10 +725,10 @@
     "resources": [
       {
         "date": "2026-02-01",
-        "storage_volume": 296060,
-        "percentage_full": 70.67,
-        "storage_inflow": -2539.6,
-        "storage_release": 12757
+        "storage_volume": 293923,
+        "percentage_full": 70.16,
+        "storage_inflow": -2473.7,
+        "storage_release": 14767
       }
     ],
     "_links": [
@@ -755,8 +755,8 @@
     "resources": [
       {
         "date": "2026-02-01",
-        "storage_volume": 96214,
-        "percentage_full": 95.73,
+        "storage_volume": 96108,
+        "percentage_full": 95.62,
         "storage_inflow": -40.7,
         "storage_release": 564
       }
@@ -785,8 +785,8 @@
     "resources": [
       {
         "date": "2026-02-01",
-        "storage_volume": 383455,
-        "percentage_full": 97.36,
+        "storage_volume": 383413,
+        "percentage_full": 97.35,
         "storage_inflow": -492,
         "storage_release": 396
       }
@@ -935,8 +935,8 @@
     "resources": [
       {
         "date": "2026-02-01",
-        "storage_volume": 289488,
-        "percentage_full": 45.87,
+        "storage_volume": 290203,
+        "percentage_full": 45.99,
         "storage_inflow": 0,
         "storage_release": 0
       }

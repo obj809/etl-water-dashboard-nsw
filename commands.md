@@ -10,11 +10,44 @@ source venv/bin/activate
 
 ## install requirements
 
-pip install requests python-dotenv
+pip install -r requirements.txt
 
 ## freeze requirements
 
 pip freeze > requirements.txt
+
+
+
+# DATABASE CONFIGURATION
+
+## configure .env file
+
+Copy .env.example to .env and configure your credentials:
+
+cp .env.example .env
+nano .env  # or vim/code .env
+
+## switch database provider
+
+# For local MySQL
+DB_PROVIDER=local
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=your_user
+DB_PASSWORD=your_password
+DB_NAME=water_dashboard
+
+# For Supabase PostgreSQL
+DB_PROVIDER=supabase
+SUPABASE_DB_HOST=db.xxxxxxxxxxxxx.supabase.co
+SUPABASE_DB_PORT=5432
+SUPABASE_DB_USER=postgres.xxxxxxxxxxxxx
+SUPABASE_DB_PASSWORD=your_password
+SUPABASE_DB_NAME=postgres
+
+## test database connection
+
+python scripts/db_connect.py
 
 
 
@@ -102,15 +135,39 @@ pytest tests/test_load.py -v
 
 # DOCKER
 
-Note: Requires local MySQL running on host machine
+Note: Supports local MySQL or remote Supabase (set DB_PROVIDER in .env)
+- DB_PROVIDER=local    → MySQL on host machine
+- DB_PROVIDER=supabase → PostgreSQL (Supabase)
 
 ## build image
 
 ./docker-run.sh build
 
-## run full pipeline
+## run full pipeline with tests
 
 ./docker-run.sh pipeline
+
+## run full pipeline without tests
+
+./docker-run.sh pipeline-no-tests
+
+## run specific stages
+
+./docker-run.sh extract
+./docker-run.sh transform
+./docker-run.sh load
+
+## run tests
+
+./docker-run.sh test
+
+## open shell in container
+
+./docker-run.sh shell
+
+## view logs
+
+./docker-run.sh logs
 
 ## stop containers
 

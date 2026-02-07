@@ -1,5 +1,5 @@
 # docker-compose.yml
-# Local development - connects to local MySQL on host machine
+# Local development - supports both MySQL (local) and Supabase (remote)
 
 services:
   etl:
@@ -7,10 +7,10 @@ services:
     container_name: water-etl
     env_file:
       - .env
-    environment:
-      - DB_HOST=host.docker.internal
-      - DB_PORT=3306
+    # Only add host.docker.internal for local MySQL access
+    # Supabase connections use the host from .env directly
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
+      - ./.env:/app/.env:ro
       - ./data:/app/data

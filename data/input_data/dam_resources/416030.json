@@ -11,8 +11,8 @@
         "resources": [
           {
             "date": "2026-02-01",
-            "storage_volume": 145144,
-            "percentage_full": 46.6,
+            "storage_volume": 143602,
+            "percentage_full": 46.1,
             "storage_inflow": 1414.8,
             "storage_release": 10960
           }

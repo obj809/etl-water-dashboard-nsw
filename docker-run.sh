@@ -14,6 +14,7 @@ print_usage() {
     echo ""
     echo "Commands:"
     echo "  build         Build the Docker image"
+    echo "  db-test       Test database connection"
     echo "  down          Stop containers"
     echo "  pipeline      Run full ETL pipeline"
     echo "  pipeline-no-tests  Run pipeline without tests"
@@ -25,7 +26,9 @@ print_usage() {
     echo "  logs          View container logs"
     echo "  prod          Run pipeline in production mode (external DB)"
     echo ""
-    echo "Note: Requires local MySQL running on host machine"
+    echo "Note: Supports local MySQL or remote Supabase (set DB_PROVIDER in .env)"
+    echo "      - DB_PROVIDER=local    → MySQL on host machine"
+    echo "      - DB_PROVIDER=supabase → PostgreSQL (Supabase)"
     echo ""
     echo "Examples:"
     echo "  ./docker-run.sh build"
@@ -36,6 +39,10 @@ case "$1" in
     build)
         echo -e "${GREEN}Building Docker image...${NC}"
         docker-compose build
+        ;;
+    db-test)
+        echo -e "${GREEN}Testing database connection...${NC}"
+        docker-compose run --rm --entrypoint python etl scripts/db_connect.py
         ;;
     down)
         echo -e "${YELLOW}Stopping local environment...${NC}"

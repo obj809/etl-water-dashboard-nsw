@@ -1,31 +1,16 @@
 # load/load_latest_data.py
 
 import os
+import sys
 import json
-import mysql.connector
-from dotenv import load_dotenv
 
+# Add scripts directory to path for imports
 PROJECT_ROOT = os.path.join(os.path.dirname(__file__), "..")
-load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, "scripts"))
+
+from db_utils import DatabaseConnection
+
 INPUT_FILE = os.path.join(PROJECT_ROOT, "data", "output_data", "dams_resources_latest.json")
-
-DB_HOST = os.getenv("DB_HOST", "localhost")
-DB_USER = os.getenv("DB_USER")
-DB_PASSWORD = os.getenv("DB_PASSWORD")
-DB_NAME = os.getenv("DB_NAME")
-
-if not all([DB_USER, DB_PASSWORD, DB_NAME]):
-    raise RuntimeError("DB_USER, DB_PASSWORD, and DB_NAME must be set in .env file")
-
-
-def get_connection():
-    """Create and return a database connection."""
-    return mysql.connector.connect(
-        host=DB_HOST,
-        user=DB_USER,
-        password=DB_PASSWORD,
-        database=DB_NAME
-    )
 
 
 def ensure_dams_exist(cursor, records: list[dict]):
@@ -59,46 +44,45 @@ def load_latest_data(records: list[dict]):
     Replace all data in the latest_data table with new records.
     Ensures dams exist in dams table first (foreign key constraint).
     """
-    conn = get_connection()
-    cursor = conn.cursor()
+    with DatabaseConnection() as db:
+        cursor = db.get_cursor()
 
-    try:
-        # Ensure all dams exist in dams table
-        ensure_dams_exist(cursor, records)
+        try:
+            # Ensure all dams exist in dams table
+            ensure_dams_exist(cursor, records)
 
-        # Clear existing data
-        cursor.execute("DELETE FROM latest_data")
-        print(f"✓ Cleared existing latest_data records")
+            # Clear existing data
+            cursor.execute("DELETE FROM latest_data")
+            print(f"✓ Cleared existing latest_data records")
 
-        # Insert new records
-        insert_sql = """
-            INSERT INTO latest_data
-            (dam_id, dam_name, date, storage_volume, percentage_full, storage_inflow, storage_release)
-            VALUES (%s, %s, %s, %s, %s, %s, %s)
-        """
+            # Insert new records
+            insert_sql = """
+                INSERT INTO latest_data
+                (dam_id, dam_name, date, storage_volume, percentage_full, storage_inflow, storage_release)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)
+            """
 
-        inserted = 0
-        for record in records:
-            cursor.execute(insert_sql, (
-                record["dam_id"],
-                record["dam_name"],
-                record["date"],
-                record.get("storage_volume"),
-                record.get("percentage_full"),
-                record.get("storage_inflow"),
-                record.get("storage_release"),
-            ))
-            inserted += 1
+            inserted = 0
+            for record in records:
+                cursor.execute(insert_sql, (
+                    record["dam_id"],
+                    record["dam_name"],
+                    record["date"],
+                    record.get("storage_volume"),
+                    record.get("percentage_full"),
+                    record.get("storage_inflow"),
+                    record.get("storage_release"),
+                ))
+                inserted += 1
 
-        conn.commit()
-        print(f"✓ Inserted {inserted} records into latest_data")
+            db.commit()
+            print(f"✓ Inserted {inserted} records into latest_data")
 
-    except mysql.connector.Error as e:
-        conn.rollback()
-        raise RuntimeError(f"Database error: {e}")
-    finally:
-        cursor.close()
-        conn.close()
+        except Exception as e:
+            db.rollback()
+            raise RuntimeError(f"Database error: {e}")
+        finally:
+            cursor.close()
 
 
 def main():
