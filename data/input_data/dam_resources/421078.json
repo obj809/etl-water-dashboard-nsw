@@ -11,10 +11,10 @@
         "resources": [
           {
             "date": "2026-02-01",
-            "storage_volume": 400928,
-            "percentage_full": 34.73,
-            "storage_inflow": -709,
-            "storage_release": 20289
+            "storage_volume": 394510,
+            "percentage_full": 34.18,
+            "storage_inflow": -643,
+            "storage_release": 26082
           }
         ],
         "_links": [
