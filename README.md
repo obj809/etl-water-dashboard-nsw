@@ -1,4 +1,6 @@
-# NSW Water Dashboard ETL
+# Water Dashboard NSW ETL
+
+## Project Overview
 
 ETL pipeline for extracting NSW dam water data from the [WaterInsights API](https://api.nsw.gov.au/Product/Index/26), transforming it for analysis, and loading it into a MySQL database.
 
@@ -9,7 +11,7 @@ ETL pipeline for extracting NSW dam water data from the [WaterInsights API](http
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env  # Edit with your credentials
+cp .env.example .env
 
 # Run full pipeline
 python scripts/run_etl_pipeline.py
@@ -41,7 +43,7 @@ DB_NAME=your_db_name
 
 ```bash
 # Extract
-python extract/api_calls/fetch_token.py              # Get OAuth token (run first)
+python extract/api_calls/fetch_token.py
 python extract/api_calls/fetch_dam_resources_latest.py
 python extract/api_calls/fetch_dam_resources.py
 
@@ -50,32 +52,17 @@ python transform/transform_dam_resources_latest.py
 python transform/transform_dam_resources.py
 
 # Load
-python load/load_latest_data.py      # Replaces latest_data table
-python load/load_dam_resources.py    # Appends to dam_resources table
+python load/load_latest_data.py
+python load/load_dam_resources.py
 ```
 
 ## Testing
 
 ```bash
-pytest tests/ -v              # All tests (42 total)
-pytest tests/test_extract.py  # Extract tests
-pytest tests/test_transform.py # Transform tests
-pytest tests/test_load.py     # Load tests (requires DB)
-```
-
-## Project Structure
-
-```
-├── extract/api_calls/    # API data extraction scripts
-├── transform/            # Data transformation scripts
-├── load/                 # Database loading scripts
-├── schemas/              # Pydantic validation models
-├── tests/                # Pytest test suites
-├── scripts/              # Utility and pipeline scripts
-├── data/
-│   ├── input_data/       # Raw extracted JSON
-│   └── output_data/      # Transformed JSON
-└── sql/                  # Database schema
+pytest tests/ -v
+pytest tests/test_extract.py
+pytest tests/test_transform.py
+pytest tests/test_load.py
 ```
 
 ## Docker
@@ -84,14 +71,14 @@ pytest tests/test_load.py     # Load tests (requires DB)
 
 ```bash
 # Setup
-cp .env.docker .env  # Edit with your API credentials
+cp .env.docker .env
 
 # Build and start
 ./docker-run.sh build
-./docker-run.sh up        # Starts MySQL container
+./docker-run.sh up
 
 # Run pipeline
-./docker-run.sh pipeline  # Full pipeline with tests
+./docker-run.sh pipeline
 ./docker-run.sh pipeline-no-tests
 
 # Run individual stages
@@ -100,26 +87,10 @@ cp .env.docker .env  # Edit with your API credentials
 ./docker-run.sh load
 
 # Other commands
-./docker-run.sh test      # Run tests only
-./docker-run.sh shell     # Open shell in container
-./docker-run.sh db        # Connect to MySQL
-./docker-run.sh down      # Stop containers
-```
-
-### Production (Hostinger VPS)
-
-1. Copy files to VPS:
-```bash
-scp -r . user@your-vps:/path/to/app
-```
-
-2. Configure `.env` with your production database credentials
-
-3. Run pipeline:
-```bash
-./docker-run.sh prod
-# Or directly:
-docker-compose -f docker-compose.prod.yml run --rm etl
+./docker-run.sh test
+./docker-run.sh shell
+./docker-run.sh db
+./docker-run.sh down
 ```
 
 ### Manual Docker Commands
